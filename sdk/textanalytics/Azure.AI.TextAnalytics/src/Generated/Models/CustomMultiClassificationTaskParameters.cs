@@ -10,7 +10,7 @@ using System;
 namespace Azure.AI.TextAnalytics.Models
 {
     /// <summary> The CustomMultiClassificationTaskParameters. </summary>
-    public partial class CustomMultiClassificationTaskParameters
+    internal partial class CustomMultiClassificationTaskParameters
     {
         /// <summary> Initializes a new instance of CustomMultiClassificationTaskParameters. </summary>
         /// <param name="projectName"></param>
@@ -31,11 +31,8 @@ namespace Azure.AI.TextAnalytics.Models
             DeploymentName = deploymentName;
         }
 
-        /// <summary> Gets the project name. </summary>
         public string ProjectName { get; }
-        /// <summary> Gets the deployment name. </summary>
         public string DeploymentName { get; }
-        /// <summary> Gets or sets the logging opt out. </summary>
         public bool? LoggingOptOut { get; set; }
     }
 }

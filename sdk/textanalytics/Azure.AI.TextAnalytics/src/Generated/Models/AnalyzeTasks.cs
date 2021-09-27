@@ -77,11 +77,8 @@ namespace Azure.AI.TextAnalytics.Models
         public IReadOnlyList<EntityLinkingTasksItem> EntityLinkingTasks { get; }
         public IReadOnlyList<SentimentAnalysisTasksItem> SentimentAnalysisTasks { get; }
         public IReadOnlyList<ExtractiveSummarizationTasksItem> ExtractiveSummarizationTasks { get; }
-        /// <summary> Gets the custom entity recognition tasks. </summary>
         public IReadOnlyList<CustomEntityRecognitionTasksItem> CustomEntityRecognitionTasks { get; }
-        /// <summary> Gets the custom single classification tasks. </summary>
         public IReadOnlyList<TasksStateTasksCustomSingleClassificationTasksItem> CustomSingleClassificationTasks { get; }
-        /// <summary> Gets the custom multi classification tasks. </summary>
         public IReadOnlyList<TasksStateTasksCustomMultiClassificationTasksItem> CustomMultiClassificationTasks { get; }
     }
 }
