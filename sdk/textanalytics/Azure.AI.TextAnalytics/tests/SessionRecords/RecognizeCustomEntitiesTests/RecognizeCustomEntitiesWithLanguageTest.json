@@ -8,7 +8,7 @@
         "Content-Length": "367",
         "Content-Type": "application/json",
         "Ocp-Apim-Subscription-Key": "Sanitized",
-        "traceparent": "00-35d6c9b4f5a1f34bb30f38101af1cf78-e1154b02f0ee1c4b-00",
+        "traceparent": "00-9eef6aa8c3804246905bae43a49be9de-612aa5eab342ec4a-00",
         "User-Agent": "azsdk-net-AI.TextAnalytics/5.2.0-alpha.20210927.1 (.NET Framework 4.8.4341.0; Microsoft Windows 10.0.19043 )",
         "x-ms-client-request-id": "20b2726b6f72ee77862e98bbfb8ef41b",
         "x-ms-return-client-request-id": "true"
@@ -36,18 +36,18 @@
       },
       "StatusCode": 202,
       "ResponseHeaders": {
-        "apim-request-id": "4a9da54f-3c53-4a3c-a2c5-60215b3b768a",
-        "Date": "Mon, 27 Sep 2021 10:01:21 GMT",
-        "operation-location": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/ccfc1033-a574-4605-817f-73467ed13a89",
+        "apim-request-id": "002df656-a8b1-4f52-980f-a1ef6d8082c8",
+        "Date": "Mon, 27 Sep 2021 14:29:08 GMT",
+        "operation-location": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/4c0e44ed-6d5c-4a0d-9243-d81bbb38399e",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "Transfer-Encoding": "chunked",
         "x-content-type-options": "nosniff",
-        "x-envoy-upstream-service-time": "430"
+        "x-envoy-upstream-service-time": "141"
       },
       "ResponseBody": []
     },
     {
-      "RequestUri": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/ccfc1033-a574-4605-817f-73467ed13a89",
+      "RequestUri": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/4c0e44ed-6d5c-4a0d-9243-d81bbb38399e",
       "RequestMethod": "GET",
       "RequestHeaders": {
         "Accept": "application/json, text/json",
@@ -59,20 +59,20 @@
       "RequestBody": null,
       "StatusCode": 200,
       "ResponseHeaders": {
-        "apim-request-id": "6b255eef-587a-4210-98b3-a96fc43e031d",
+        "apim-request-id": "69345d67-52bf-4f0e-870f-4ddee8983726",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Mon, 27 Sep 2021 10:01:22 GMT",
+        "Date": "Mon, 27 Sep 2021 14:29:08 GMT",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "Transfer-Encoding": "chunked",
         "x-content-type-options": "nosniff",
-        "x-envoy-upstream-service-time": "138"
+        "x-envoy-upstream-service-time": "6"
       },
       "ResponseBody": {
-        "jobId": "ccfc1033-a574-4605-817f-73467ed13a89",
-        "lastUpdateDateTime": "2021-09-27T10:01:22Z",
-        "createdDateTime": "2021-09-27T10:01:21Z",
-        "expirationDateTime": "2021-09-28T10:01:21Z",
-        "status": "running",
+        "jobId": "4c0e44ed-6d5c-4a0d-9243-d81bbb38399e",
+        "lastUpdateDateTime": "2021-09-27T14:29:09Z",
+        "createdDateTime": "2021-09-27T14:29:09Z",
+        "expirationDateTime": "2021-09-28T14:29:09Z",
+        "status": "notStarted",
         "errors": [],
         "displayName": "NA",
         "tasks": {
@@ -84,7 +84,7 @@
       }
     },
     {
-      "RequestUri": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/ccfc1033-a574-4605-817f-73467ed13a89",
+      "RequestUri": "https://cognitiveweppe.azure-api.net/text/analytics/v3.2-preview.2/analyze/jobs/4c0e44ed-6d5c-4a0d-9243-d81bbb38399e",
       "RequestMethod": "GET",
       "RequestHeaders": {
         "Accept": "application/json, text/json",
@@ -96,19 +96,19 @@
       "RequestBody": null,
       "StatusCode": 200,
       "ResponseHeaders": {
-        "apim-request-id": "bddcbf46-d72b-4114-bda2-7fd8c28e9cfc",
+        "apim-request-id": "bc8017b6-2118-4d81-88f6-906e2dddc077",
         "Content-Type": "application/json; charset=utf-8",
-        "Date": "Mon, 27 Sep 2021 10:01:23 GMT",
+        "Date": "Mon, 27 Sep 2021 14:29:10 GMT",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "Transfer-Encoding": "chunked",
         "x-content-type-options": "nosniff",
-        "x-envoy-upstream-service-time": "74"
+        "x-envoy-upstream-service-time": "57"
       },
       "ResponseBody": {
-        "jobId": "ccfc1033-a574-4605-817f-73467ed13a89",
-        "lastUpdateDateTime": "2021-09-27T10:01:23Z",
-        "createdDateTime": "2021-09-27T10:01:21Z",
-        "expirationDateTime": "2021-09-28T10:01:21Z",
+        "jobId": "4c0e44ed-6d5c-4a0d-9243-d81bbb38399e",
+        "lastUpdateDateTime": "2021-09-27T14:29:10Z",
+        "createdDateTime": "2021-09-27T14:29:09Z",
+        "expirationDateTime": "2021-09-28T14:29:09Z",
         "status": "succeeded",
         "errors": [],
         "displayName": "NA",
@@ -119,7 +119,7 @@
           "total": 1,
           "customEntityRecognitionTasks": [
             {
-              "lastUpdateDateTime": "2021-09-27T10:01:23.1129721Z",
+              "lastUpdateDateTime": "2021-09-27T14:29:10.1076609Z",
               "state": "succeeded",
               "results": {
                 "documents": [

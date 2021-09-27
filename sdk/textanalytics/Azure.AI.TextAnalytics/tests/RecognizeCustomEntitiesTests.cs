@@ -106,7 +106,7 @@ namespace Azure.AI.TextAnalytics.Tests
             var results = ExtractDocumentsResultsFromResponse(operation);
             var firstResult = results.First();
             var Entites = firstResult.Entities;
-            ValidateInDocumentResult(Entites, s_document1ExpectedOutput);
+            ValidateInDocumentResult(Entites, e_document1ExpectedOutput);
         }
 
         [RecordedTest]
