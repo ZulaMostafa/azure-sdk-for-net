@@ -3,6 +3,7 @@
 ## 5.2.0-beta.2 (Unreleased)
 
 ### Features Added
+- Added property `RecognizeCustomEntitiesAction` to `TextAnalyticsActions` to support the new 'Recognize Custom Entities' API. This action can be used to get custom entities for an input document or batch of documents.
 
 ### Breaking Changes
 
