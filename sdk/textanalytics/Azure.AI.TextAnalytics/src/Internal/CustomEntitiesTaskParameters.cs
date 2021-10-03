@@ -7,7 +7,7 @@ using Azure.Core;
 namespace Azure.AI.TextAnalytics.Models
 {
     [CodeGenModel("CustomEntitiesTaskParameters")]
-    internal partial class CustomEntitiesTaskParameters : IUtf8JsonSerializable
+    internal partial class CustomEntitiesTaskParameters
     {
     }
 }

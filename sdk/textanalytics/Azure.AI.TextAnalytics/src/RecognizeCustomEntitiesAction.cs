@@ -6,7 +6,6 @@ namespace Azure.AI.TextAnalytics
     /// <summary>
     /// Configurations that allow callers to specify details about how to execute
     /// a Recognize Custom Entities action in a set of documents.
-    /// Project Name and Deployment Name are required.
     /// </summary>
     public class RecognizeCustomEntitiesAction
     {
@@ -16,8 +15,8 @@ namespace Azure.AI.TextAnalytics
         /// a Recognize Custom Entities action in a set of documents.
         /// Sets the <see cref="ProjectName"/> and <see cref="DeploymentName"/> properties.
         /// </summary>
-        /// <param name="projectName">Gets the value of the property corresponding to the name of the project.</param>
-        /// <param name="deploymentName">Gets the value of the property corresponding to the name of the deployment.</param>
+        /// <param name="projectName">Sets the value of the property corresponding to the name of the project.</param>
+        /// <param name="deploymentName">Sets the value of the property corresponding to the name of the deployment.</param>
         public RecognizeCustomEntitiesAction(string projectName, string deploymentName)
         {
             ProjectName = projectName;

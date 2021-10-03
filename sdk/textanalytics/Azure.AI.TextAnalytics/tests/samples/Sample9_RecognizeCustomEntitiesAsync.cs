@@ -20,7 +20,7 @@ namespace Azure.AI.TextAnalytics.Tests.samples
             string apiKey = TestEnvironment.ApiKey;
             var client = new TextAnalyticsClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
 
-            #region Snippet:RecognizeCustomEntitiesAsync
+            #region Snippet:RecognizeCustomEntitiesActionAsync
             // Get input document.
             string documentA = @"We love this trail and make the trip every year. The views are breathtaking and well
                                 worth the hike! Yesterday was foggy though, so we missed the spectacular views.
@@ -43,7 +43,18 @@ namespace Azure.AI.TextAnalytics.Tests.samples
                 }
             };
 
-            //prepare actions
+            //prepate actions
+#if SNIPPET
+            string projectName = "<projectName>";
+            string deploymentName = "<deploymentName>";
+            var actions = new TextAnalyticsActions()
+            {
+                RecognizeCustomEntitiesActions = new List<RecognizeCustomEntitiesAction>()
+                {
+                    new RecognizeCustomEntitiesAction(projectName, deploymentName);
+                }
+            };
+#else
             var actions = new TextAnalyticsActions()
             {
                 RecognizeCustomEntitiesActions = new List<RecognizeCustomEntitiesAction>()
@@ -51,10 +62,26 @@ namespace Azure.AI.TextAnalytics.Tests.samples
                     new RecognizeCustomEntitiesAction(TestEnvironment.ProjectName, TestEnvironment.DeploymentName)
                 }
             };
+#endif
 
             AnalyzeActionsOperation operation = await client.StartAnalyzeActionsAsync(batchDocuments, actions);
 
             await operation.WaitForCompletionAsync();
+            #endregion
+
+            #region Snippet:RecognizeCustomEntitiesActionOperationStatus
+            // View operation status.
+            Console.WriteLine($"AnalyzeActions operation has completed");
+            Console.WriteLine();
+            Console.WriteLine($"Created On   : {operation.CreatedOn}");
+            Console.WriteLine($"Expires On   : {operation.ExpiresOn}");
+            Console.WriteLine($"Id           : {operation.Id}");
+            Console.WriteLine($"Status       : {operation.Status}");
+            Console.WriteLine($"Last Modified: {operation.LastModified}");
+            Console.WriteLine();
+            #endregion
+
+            #region Snippet:RecognizeCustomEntitiesActionAsyncViewResults
 
             await foreach (AnalyzeActionsResult documentsInPage in operation.Value)
             {

@@ -19,7 +19,6 @@ namespace Azure.AI.TextAnalytics.Tests.samples
             string apiKey = TestEnvironment.ApiKey;
             var client = new TextAnalyticsClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
 
-            #region Snippet:RecognizeCustomEntities
             // Get input document(s).
             string documentA = @"A recent report by the Government Accountability Office (GAO) found that the dramatic
                                 increase in oil and natural gas development on federal lands over the past six years
@@ -98,7 +97,6 @@ namespace Azure.AI.TextAnalytics.Tests.samples
                     }
                 }
             }
-            #endregion
         }
     }
 }

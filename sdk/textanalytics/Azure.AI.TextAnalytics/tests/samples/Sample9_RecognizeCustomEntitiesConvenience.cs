@@ -19,7 +19,6 @@ namespace Azure.AI.TextAnalytics.Tests.samples
             string apiKey = TestEnvironment.ApiKey;
             var client = new TextAnalyticsClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
 
-            #region Snippet:RecognizeCustomEntities
             // Get input document(s).
             string documentA = @"We love this trail and make the trip every year. The views are breathtaking and well
                                 worth the hike! Yesterday was foggy though, so we missed the spectacular views.
@@ -93,7 +92,6 @@ namespace Azure.AI.TextAnalytics.Tests.samples
                     }
                 }
             }
-            #endregion
         }
     }
 }
