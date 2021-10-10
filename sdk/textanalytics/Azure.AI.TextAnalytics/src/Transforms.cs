@@ -424,7 +424,8 @@ namespace Azure.AI.TextAnalytics
 
             return new PiiTask()
             {
-                Parameters = parameters
+                Parameters = parameters,
+                TaskName = action.ActionName
             };
         }
 
@@ -437,7 +438,8 @@ namespace Azure.AI.TextAnalytics
                     ModelVersion = action.ModelVersion,
                     StringIndexType = Constants.DefaultStringIndexType,
                     LoggingOptOut = action.DisableServiceLogs
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -450,7 +452,8 @@ namespace Azure.AI.TextAnalytics
                     ModelVersion = action.ModelVersion,
                     StringIndexType = Constants.DefaultStringIndexType,
                     LoggingOptOut = action.DisableServiceLogs
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -462,7 +465,8 @@ namespace Azure.AI.TextAnalytics
                 {
                     ModelVersion = action.ModelVersion,
                     LoggingOptOut = action.DisableServiceLogs
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -476,7 +480,8 @@ namespace Azure.AI.TextAnalytics
                     StringIndexType = Constants.DefaultStringIndexType,
                     LoggingOptOut = action.DisableServiceLogs,
                     OpinionMining = action.IncludeOpinionMining
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -491,7 +496,8 @@ namespace Azure.AI.TextAnalytics
                     LoggingOptOut = action.DisableServiceLogs,
                     SentenceCount = action.MaxSentenceCount,
                     SortBy = action.OrderBy
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -502,7 +508,8 @@ namespace Azure.AI.TextAnalytics
                 Parameters = new CustomSingleClassificationTaskParameters(action.ProjectName, action.DeploymentName)
                 {
                     LoggingOptOut = action.DisableServiceLogs,
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -513,7 +520,8 @@ namespace Azure.AI.TextAnalytics
                 Parameters = new CustomMultiClassificationTaskParameters(action.ProjectName, action.DeploymentName)
                 {
                     LoggingOptOut = action.DisableServiceLogs,
-                }
+                },
+                TaskName = action.ActionName
             };
         }
 
@@ -716,11 +724,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new MultiCategoryClassifyActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new MultiCategoryClassifyActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new MultiCategoryClassifyActionResult(ConvertToMultiCategoryClassifyResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new MultiCategoryClassifyActionResult(ConvertToMultiCategoryClassifyResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -738,11 +746,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new SingleCategoryClassifyActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new SingleCategoryClassifyActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new SingleCategoryClassifyActionResult(ConvertToSingleCategoryClassifyResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new SingleCategoryClassifyActionResult(ConvertToSingleCategoryClassifyResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -760,11 +768,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new AnalyzeSentimentActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new AnalyzeSentimentActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new AnalyzeSentimentActionResult(ConvertToAnalyzeSentimentResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new AnalyzeSentimentActionResult(ConvertToAnalyzeSentimentResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -782,11 +790,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new RecognizeLinkedEntitiesActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new RecognizeLinkedEntitiesActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new RecognizeLinkedEntitiesActionResult(ConvertToRecognizeLinkedEntitiesResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new RecognizeLinkedEntitiesActionResult(ConvertToRecognizeLinkedEntitiesResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -804,11 +812,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new ExtractKeyPhrasesActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new ExtractKeyPhrasesActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new ExtractKeyPhrasesActionResult(ConvertToExtractKeyPhrasesResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new ExtractKeyPhrasesActionResult(ConvertToExtractKeyPhrasesResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -826,11 +834,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new RecognizePiiEntitiesActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new RecognizePiiEntitiesActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new RecognizePiiEntitiesActionResult(ConvertToRecognizePiiEntitiesResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new RecognizePiiEntitiesActionResult(ConvertToRecognizePiiEntitiesResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -848,11 +856,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new RecognizeEntitiesActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new RecognizeEntitiesActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new RecognizeEntitiesActionResult(ConvertToRecognizeEntitiesResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new RecognizeEntitiesActionResult(ConvertToRecognizeEntitiesResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
@@ -870,11 +878,11 @@ namespace Azure.AI.TextAnalytics
 
                 if (taskError != null)
                 {
-                    collection.Add(new ExtractSummaryActionResult(task.LastUpdateDateTime, taskError));
+                    collection.Add(new ExtractSummaryActionResult(task.LastUpdateDateTime, task.TaskName, taskError));
                 }
                 else
                 {
-                    collection.Add(new ExtractSummaryActionResult(ConvertToExtractSummaryResultCollection(task.Results, idToIndexMap), task.LastUpdateDateTime));
+                    collection.Add(new ExtractSummaryActionResult(ConvertToExtractSummaryResultCollection(task.Results, idToIndexMap), task.TaskName, task.LastUpdateDateTime));
                 }
                 index++;
             }
