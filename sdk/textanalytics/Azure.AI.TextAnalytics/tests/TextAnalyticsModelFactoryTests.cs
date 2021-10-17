@@ -193,7 +193,7 @@ namespace Azure.AI.TextAnalytics.Tests
         {
             var result = TextAnalyticsModelFactory.ExtractSummaryResultCollection(new List<ExtractSummaryResult>(), default, default);
             var completedOn = DateTimeOffset.UtcNow;
-            string actionName = "";
+            string actionName = "ExtractSummary";
 
             var actionResult = TextAnalyticsModelFactory.ExtractSummaryActionResult(result, actionName, completedOn);
 
@@ -210,7 +210,7 @@ namespace Azure.AI.TextAnalytics.Tests
             var completedOn = DateTimeOffset.UtcNow;
             var code = "code";
             var message = "message";
-            string actionName = "";
+            string actionName = "ExtractSummary";
 
             var actionResult = TextAnalyticsModelFactory.ExtractSummaryActionResult(actionName, completedOn, code, message);
 
